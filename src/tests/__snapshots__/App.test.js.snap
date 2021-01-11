@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`paginate page renders bar 1`] = `
+Array [
+  <button
+    className="btn btn-outline-secondary btn-sm"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  />,
+  <span
+    className="paginationNumbers"
+  >
+    2
+  </span>,
+  <span
+    className="paginationNumbers"
+  >
+    /
+  </span>,
+  <span
+    className="paginationNumbers"
+  >
+    5
+  </span>,
+  <button
+    className="btn btn-outline-secondary btn-sm"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  />,
+]
+`;
