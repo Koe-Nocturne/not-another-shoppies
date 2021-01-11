@@ -1,6 +1,6 @@
 import { React, useState, useEffect, useRef } from 'react';
 
-//Components imported
+//Components imports
 import SearchBar from '../components/SearchBar';
 import DisplayOfResults from '../components/DisplayOfResults';
 import NominatedResults from '../components/NominatedResults';
@@ -12,7 +12,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 //API calls
 import { searchRequest } from './../services/searchRequest';
 
-// import mockData from '../assets/mock/mockDataArray.json';
 
 const HomePageContainer = () => {
 
@@ -72,7 +71,7 @@ const HomePageContainer = () => {
         }));
     };
 
-    //
+    //callback for setting isTyping to false
     const updateIsTyping = () => {
         setLocalStorage(oldStorage => ({
             ...oldStorage,

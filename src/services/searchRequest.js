@@ -1,7 +1,5 @@
 import { getRequest } from './Api'
 
-// import mockData from './../assets/mock/mockDataArray.json';
-
 const searchRequest = (searchTerm, pageNumber = 1) => {
     //converting search term into query string friendly format
     let term = searchTerm.split(' ').join('+');

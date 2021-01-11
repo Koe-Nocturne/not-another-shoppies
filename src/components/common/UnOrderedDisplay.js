@@ -3,7 +3,7 @@ import { React } from 'react';
 // Bootstrap imports
 import { Form, Button } from 'react-bootstrap'
 
-//Components
+//Component import
 import Pagination from './../Pagination';
 
 const UnOrderedDisplay = ( props ) => {

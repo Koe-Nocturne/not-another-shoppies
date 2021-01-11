@@ -24,7 +24,7 @@ This project is built in React 17 so enzyme is not compatiable. I created one sn
 
 ### `Pagination`
 
-This page supports pagination of the results.
+This page supports pagination of the results. If the results are greater then 10.
 
 ### `Auto Search`
 
@@ -35,7 +35,7 @@ After you start typing and stop for 1.5 seconds the API will fire.
 Results are saved when you leave or refresh the page.
 
 
-## Improvements to be made
+## Improvements to be made / Wishlist
 
 ### `Tests`
 
