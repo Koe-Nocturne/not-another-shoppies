@@ -9,11 +9,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const SearchBar = ({ searchTerm, handleChange }) => {
 
     return (
-        <Form id='search-movies' className='cards'>
+        <Form id='search-movies'>
             <Form.Group controlId='movie-search'>
                 <Row>
                     <Col className='text-left'>
-                        <Form.Label>Movie title</Form.Label>
+                        <Form.Label>Search Movies to Nominate</Form.Label>
                     </Col>
                 </Row>
                 <Row>

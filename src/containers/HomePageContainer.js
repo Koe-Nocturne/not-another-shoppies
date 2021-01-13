@@ -4,7 +4,8 @@ import { React, useState, useEffect, useRef } from 'react';
 import SearchBar from '../components/SearchBar';
 import DisplayOfResults from '../components/DisplayOfResults';
 import NominatedResults from '../components/NominatedResults';
-import ThankYouBar from '../components/ThankYouBar'
+// import ThankYouBar from '../components/ThankYouBar'
+import NominationBar from '../components/NominationBar';
 
 // Bootstrap imports
 import { Container, Row, Col } from 'react-bootstrap';
@@ -165,44 +166,32 @@ const HomePageContainer = () => {
     
 
     return (
-        <div className="my-5">
-            <Container>
-                <Row>
-                    <Col>
+        <div>
+            <Container fluid>
+                <Row className='top-bar' ref={thankYouBar}>
+                    <Col sm={2} className='header-logo'>
                         <header className='text-left'>
-                            <h1>The Shoppies</h1>
+                            <h1>Shoppies</h1>
                         </header>
+                    </Col>
+                    <Col className='nomination-bar'>
+                        <NominationBar size={localStorage.setId.size } />
                     </Col>
                 </Row>
             </Container>
-            {/* Thank you bar */}
-            { localStorage.setId.size === 5 &&
-                <Container>
-                    <Row>
-                        <Col ref={thankYouBar}>
-                            <ThankYouBar />
-                        </Col>
-                    </Row>
-                </Container>
-            }
-
-            {/* Search Bar */}
-            <Container>
-                <SearchBar searchTerm={ localStorage.searchTerm } handleChange={updateSearchTerm}/>
-            </Container>
-            {/* Lower row with two panels */}
-            <Container>
+            <Container fluid>
                 <Row>
-                    <Col xs={12} md={6}>
+                    <Col sm={2} className='nomination-results'>
+                        <NominatedResults data={ localStorage.nominatedMovies } onClick={removeNomMovies}/>
+                    </Col>
+                    <Col sm={10}>
+                        <SearchBar searchTerm={ localStorage.searchTerm } handleChange={updateSearchTerm}/>
                         <DisplayOfResults 
                             data={ localStorage } 
                             searchTerm={ localStorage.searchTerm } 
                             onClick={addNomMovies}
                             pagination={[localStorage.pageNumber,localStorage.totalResults, changePage]} 
                             />
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <NominatedResults data={ localStorage.nominatedMovies } onClick={removeNomMovies}/>
                     </Col>
                 </Row>
             </Container>

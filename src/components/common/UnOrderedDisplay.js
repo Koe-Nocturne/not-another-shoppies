@@ -7,7 +7,7 @@ import { Form, Button } from 'react-bootstrap'
 import Pagination from './../Pagination';
 
 const UnOrderedDisplay = ( props ) => {
-    const { title, buttonText, data, onClick, imdbID = undefined, pagination = undefined} = props;
+    const { title, buttonText, data, onClick, outerClassName = '', imdbID = undefined, pagination = undefined} = props;
 
     //renders out the li based off the data we get back
     const expandListItem = () => {
@@ -18,17 +18,23 @@ const UnOrderedDisplay = ( props ) => {
             //returns the li item
             return (
                 <li className='text-left' key={`li-${buttonText}-${ind}`}>
-                    <span>
-                    {obj.Title}  ({obj.Year})   
-                    <Button 
-                        variant="outline-secondary" 
-                        type='button' 
-                        onClick={() => onClick(obj)} 
-                        className={isDisabled}>
+                    <div className='li-cards'>
+                        <span className='li-title'>
+                        {obj.Title}   
+                        </span>
+                        <span className='li-year'>
+                        ({obj.Year}) 
+                        </span>
+                        <Button 
+                            variant={ isDisabled === 'disabled' ? 'outline-secondary' : 'success' }
+                            type='button' 
+                            onClick={() => onClick(obj)} 
+                            className={`${isDisabled}`}>
 
-                        { buttonText }
-                    </Button>
-                    </span>
+                        {    buttonText }
+                        </Button>
+                    </div>
+
                 </li> );
         }) : null;
     return li;
@@ -36,7 +42,7 @@ const UnOrderedDisplay = ( props ) => {
     };
 
     return (
-        <Form className='cards'>
+        <Form className={`unordered-list ${outerClassName}`}>
             <h5 className='text-left' id={buttonText.toLowerCase()} key={`header-${buttonText.toLowerCase()}`}>
                 { title }
             </h5>

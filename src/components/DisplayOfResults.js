@@ -15,6 +15,7 @@ const DisplayOfResults = ({ data, searchTerm, onClick, pagination }) => {
             onClick={onClick}
             imdbID={data.setId}
             pagination={pagination}
+            outerClassName='result-list'
         />
     );
 

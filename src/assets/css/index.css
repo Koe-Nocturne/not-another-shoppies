@@ -2,25 +2,29 @@
   text-align: center; }
 
 body {
-  background-color: #f2f2f2; }
+  background-color: #e9e9f0; }
 
-.cards {
-  background-color: white;
-  border-radius: 5px;
-  padding: 2.2rem;
-  margin: 1rem 0px;
-  box-shadow: 0 2px 2px 0 rgba(191, 191, 191, 0.2), 0 1px 5px 0 rgba(191, 191, 191, 0.19);
-  border: 1px solid #d9d9d9; }
-  .cards ul li {
-    margin: 1em 0; }
-    .cards ul li button {
-      margin-left: .5rem; }
-      .cards ul li button.disabled {
+.unordered-list ul {
+  padding-inline-start: 0px; }
+  .unordered-list ul li {
+    list-style: none; }
+    .unordered-list ul li .li-cards {
+      height: 200px;
+      width: 200px;
+      padding: 1.5em 1.5em;
+      background-color: white;
+      margin: 1em 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 2px 0 rgba(191, 191, 191, 0.2), 0 1px 5px 0 rgba(191, 191, 191, 0.19); }
+      .unordered-list ul li .li-cards button.disabled {
         cursor: not-allowed;
         background-color: #f2f2f2; }
 
+#search-movies {
+  padding-top: 1rem; }
+
 #search-bar .input-group-prepend .input-group-text {
-  background: transparent;
+  background: white;
   border-right: none; }
 #search-bar #movie-search {
   border-left: none; }
@@ -33,3 +37,73 @@ body {
 
 html {
   scroll-behavior: smooth; }
+
+.top-bar {
+  height: 5rem; }
+  .top-bar div {
+    padding: 0; }
+    .top-bar div.header-logo {
+      padding: 1rem;
+      color: white;
+      background-color: #36b136;
+      height: 5rem; }
+    .top-bar div.nomination-bar {
+      padding: 0.5rem;
+      background-color: white; }
+      .top-bar div.nomination-bar .nomination-row {
+        padding-top: 0.5rem; }
+        .top-bar div.nomination-bar .nomination-row .progress-bar-col {
+          padding: 0.25em 4rem 0 0; }
+
+.nomination-results {
+  padding: 0px;
+  background-color: rgba(69, 67, 77, 0.8);
+  color: white;
+  height: 130vh; }
+
+.nomination-list {
+  padding: 1rem; }
+  .nomination-list ul li .li-cards {
+    background-color: rgba(47, 47, 65, 0.304);
+    height: 8rem;
+    padding: 0.5rem;
+    position: relative;
+    box-shadow: none;
+    width: 115%;
+    margin: 5px -1rem 0 -1rem; }
+    .nomination-list ul li .li-cards .li-year {
+      padding: 0 0 0  1.3rem; }
+    .nomination-list ul li .li-cards .btn-success {
+      background-color: rgba(137, 49, 49, 0.77);
+      border-color: rgba(99, 22, 45, 0.626);
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: 2.5rem;
+      left: 0px;
+      text-align: center;
+      margin-left: 0px; }
+
+.result-list ul {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; }
+  .result-list ul li {
+    float: left; }
+    .result-list ul li .li-cards {
+      margin: 5px;
+      position: relative; }
+      .result-list ul li .li-cards .li-title {
+        display: block;
+        border-bottom: 1px solid gray; }
+      .result-list ul li .li-cards .li-year {
+        padding: 1.3rem 0;
+        display: block; }
+      .result-list ul li .li-cards .btn {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 3rem;
+        left: 0px;
+        text-align: center;
+        margin-left: 0px; }
