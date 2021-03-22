@@ -39,7 +39,7 @@ const Pagination = ({ pagination }) => {
 
     return (
         <Fragment>
-            {createBar()}
+            <div> {createBar()} </div>
         </Fragment>
     );
 

@@ -19,6 +19,51 @@ You will also see any lint errors in the console.
 
 This project is built in React 17 so enzyme is not compatiable. I created one snapshot test and I did write two other tests that are commented out. I found out the incompatibility after building the project. 
 
+## Coding sample
+```
+const Pagination = ({ pagination }) => {
+
+    const [pageCount, total, handleClick] = pagination;
+    const totalPages = Math.ceil(total / 10);
+
+    //general setup for pagination bar
+    const paginationSetup = [
+        { icon: 'angle-left', text: '-', onClick: handleClick, isShowing: pageCount === 1},
+        { icon: '', text: `${pageCount}`  },
+        { icon: '', text: '/' },
+        { icon: '', text: `${totalPages}` },
+        { icon: 'angle-right', text: '+', onClick: handleClick, isShowing: pageCount === totalPages }
+    ];
+
+
+    //This will map through the pagination array and give us the pagination bar
+    const createBar = () => {
+        return paginationSetup.map((obj,ind) => {
+            return obj.icon ?
+                (<Button size='sm' 
+                    variant="outline-secondary" 
+                    className={ obj.isShowing ? 'hidden' : ''} 
+                    onClick={() => obj.onClick(obj.text)}
+                    type='button'
+                    key={`pagination-button${obj.icon}`}>
+                    <FontAwesomeIcon icon={obj.icon}/>
+                </Button>) :
+                (<span className='paginationNumbers' key={`pagination-span-${obj.text}-${ind}`}>{obj.text}</span>);
+        });
+    };
+
+    return (
+        <Fragment>
+            <div> {createBar()} </div>
+        </Fragment>
+    );
+
+};
+
+export default Pagination;
+```
+The reason why I have selected this code is because I don't usually work with pagination in the frontend and always wanted to tinker with it. This was a fun experiment.
+
 
 ## Features built in
 
@@ -45,3 +90,6 @@ I would add more tests to get more coverage on the app.
 
 To avoid prop drilling and for fun I thought about adding Redux.
 
+### `Fix Styling`
+
+Some of the styling is not consistant and would like to update the scss.

@@ -13,7 +13,7 @@ const SearchBar = ({ searchTerm, handleChange }) => {
             <Form.Group controlId='movie-search'>
                 <Row>
                     <Col className='text-left'>
-                        <Form.Label>Search Movies to Nominate</Form.Label>
+                        <Form.Label>Search movies to nominate</Form.Label>
                     </Col>
                 </Row>
                 <Row>
